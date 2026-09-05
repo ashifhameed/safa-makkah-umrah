@@ -127,6 +127,7 @@
     background-size:28px 28px;
   }
   .hero-inner{position:relative;z-index:2;padding:64px 0 0;text-align:center;}
+  @media (max-width:640px){ .hero-inner{padding-top:32px;} }
   .badge-pill{
     display:inline-flex;align-items:center;gap:8px;
     background:rgba(212,175,55,.18);border:1.5px solid var(--gold);
@@ -158,14 +159,16 @@
     border-radius:22px;padding:22px 26px 26px;
   }
   .planner-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap;}
-  .planner-row-label{font-size:.78rem;font-weight:800;color:var(--ink-500);min-width:80px;}
+  .planner-row-label{font-size:.82rem;font-weight:800;color:var(--ink-700);min-width:80px;}
   .planner-tabs{display:flex;gap:8px;flex-wrap:wrap;}
   .planner-tab{
     flex:none;padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:700;
-    border:1.5px solid var(--line);color:var(--ink-700);cursor:pointer;background:transparent;
+    border:1.5px solid var(--gold-dark);color:var(--green-900);cursor:pointer;background:var(--gold-soft);
     font-family:'Tajawal',sans-serif;
   }
+  .planner-tab:hover{background:rgba(212,175,55,.3);}
   .planner-tab.active{background:var(--green-900);border-color:var(--green-900);color:#fff;}
+  .planner-tab.active:hover{background:var(--green-900);}
   .planner-grid{display:grid;grid-template-columns:.8fr 1fr .9fr .9fr .8fr .8fr;gap:12px;align-items:end;margin-top:18px;}
   @media (max-width:980px){ .planner-grid{grid-template-columns:1fr 1fr;} }
   .planner-hotel-grid{
@@ -270,45 +273,46 @@
   .route-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
   @media (max-width:760px){ .route-cards{grid-template-columns:1fr;} }
   .route-card{
-    background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.25);
-    border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.25);overflow:hidden;
+    border-radius:18px;padding:24px 28px 28px;display:flex;flex-direction:column;gap:18px;
   }
   .route-photo{
-    position:relative;height:76px;border-radius:12px;margin-bottom:4px;
+    position:relative;height:130px;margin:-24px -28px 4px;
     background:linear-gradient(135deg, var(--green-600), var(--green-800));
     display:flex;align-items:center;justify-content:center;
   }
   .route-photo-vip{background:linear-gradient(135deg, var(--green-800), var(--green-900) 70%);}
-  .route-photo svg{width:34px;height:34px;color:rgba(212,175,55,.75);}
-  .route-photo .photo-caption{bottom:5px;font-size:.6rem;}
+  .route-photo svg{width:44px;height:44px;color:rgba(212,175,55,.75);}
+  .route-photo .photo-caption{bottom:8px;font-size:.66rem;}
   .route-photo-real{overflow:hidden;}
   .route-photo-real img{width:100%;height:100%;object-fit:cover;}
-  .route-card .rtag{font-size:.8rem;font-weight:800;color:var(--gold);}
-  .route-line{display:flex;align-items:center;gap:12px;}
+  .route-card .rtag{font-size:.92rem;font-weight:800;color:var(--gold);}
+  .route-line{display:flex;align-items:center;gap:14px;margin-top:4px;}
   .route-point{text-align:center;}
-  .route-point b{display:block;font-size:1rem;}
-  .route-point span{font-size:.74rem;color:#C9D2C2;}
+  .route-point b{display:block;font-size:1.15rem;}
+  .route-point span{font-size:.82rem;color:#C9D2C2;}
   .route-arrow{flex:1;height:1px;background:repeating-linear-gradient(90deg, var(--gold) 0 6px, transparent 6px 11px);position:relative;}
   .route-arrow::after{content:"";position:absolute;inset-inline-start:-2px;top:-4px;width:9px;height:9px;border-inline-start:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(135deg);}
-  .route-time{font-size:.82rem;color:#C9D2C2;}
-  .route-price{font-size:.9rem;font-weight:800;color:var(--gold);}
+  .route-time{font-size:.9rem;color:#C9D2C2;}
+  .route-price{font-size:1rem;font-weight:800;color:var(--gold);}
 
   .schedule-poster{
-    margin-top:24px;background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.3);
-    border-radius:20px;padding:26px;
+    margin-top:28px;background:rgba(255,255,255,.05);border:1px solid rgba(212,175,55,.3);
+    border-radius:20px;padding:32px;
   }
-  .schedule-poster-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:20px;}
-  .schedule-price{background:var(--gold);color:var(--green-900);font-size:.85rem;font-weight:800;padding:6px 14px;border-radius:999px;}
-  .schedule-days{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .schedule-poster-head{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:26px;}
+  .schedule-poster-head .rtag{font-size:1.02rem;}
+  .schedule-price{background:var(--gold);color:var(--green-900);font-size:.92rem;font-weight:800;padding:8px 18px;border-radius:999px;}
+  .schedule-days{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   @media (max-width:760px){ .schedule-days{grid-template-columns:1fr;} }
   .schedule-day{
     background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:14px;
-    padding:18px;display:flex;flex-direction:column;gap:6px;
+    padding:24px;display:flex;flex-direction:column;gap:9px;
   }
-  .schedule-day-num{font-size:.72rem;font-weight:800;color:var(--gold);letter-spacing:.02em;}
-  .schedule-day b{font-size:1rem;color:#fff;}
-  .schedule-day span{font-size:.84rem;color:#C9D2C2;line-height:1.7;}
-  .schedule-note{margin-top:18px;font-size:.82rem;color:#B7C0AE;}
+  .schedule-day-num{font-size:.78rem;font-weight:800;color:var(--gold);letter-spacing:.02em;}
+  .schedule-day b{font-size:1.1rem;color:#fff;}
+  .schedule-day span{font-size:.9rem;color:#C9D2C2;line-height:1.75;}
+  .schedule-note{margin-top:22px;font-size:.88rem;color:#B7C0AE;line-height:1.7;}
 
   .boarding-note{
     margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
@@ -387,7 +391,7 @@
       <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.3"/></svg>الموقع والتواصل</a>
     </nav>
     <div class="header-cta">
-      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">تواصل معنا</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">تواصل معنا</a>
     </div>
   </div>
 </header>
@@ -408,7 +412,7 @@
     <p class="lead">رحلات عمرة من الرياض إلى مكة المكرمة، تأشيرة وطيران وفندق ومواصلات في باقة واحدة بأفضل الأسعار.</p>
     <div class="hero-actions">
       <a class="btn btn-gold" href="#planner">احجز الآن ←</a>
-      <a class="btn btn-outline" href="https://wa.me/966568037336" target="_blank" rel="noopener">تواصل معنا</a>
+      <a class="btn btn-outline" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">تواصل معنا</a>
     </div>
   </div>
   <div class="wrap trust-row">
@@ -533,7 +537,7 @@
           </ul>
           <div class="trip-foot">
             <div class="trip-price">تواصل معنا لمعرفة السعر</div>
-            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز</a>
+            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">احجز</a>
           </div>
         </div>
       </div>
@@ -553,7 +557,7 @@
           </ul>
           <div class="trip-foot">
             <div class="trip-price">تواصل معنا لمعرفة السعر</div>
-            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز</a>
+            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">احجز</a>
           </div>
         </div>
       </div>
@@ -572,33 +576,31 @@
     <div class="hotels">
 
       <div class="hotel-card">
-        <div class="hotel-photo">
+        <div class="hotel-photo hotel-photo-real">
+          <img src="images/hotels/makarem.jpg" alt="فندق مكارم ضيافة البيت الحرام" loading="lazy">
           <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>3.0</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg>
-          <span class="photo-caption">صورة توضيحية</span>
         </div>
         <div class="hotel-body">
           <h3>فندق مكارم ضيافة البيت الحرام</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
             <span class="price-cta">تواصل لمعرفة السعر</span>
-            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+            <a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
       </div>
 
       <div class="hotel-card">
-        <div class="hotel-photo">
+        <div class="hotel-photo hotel-photo-real">
+          <img src="images/hotels/araek-ghaza.jpg" alt="فندق ارائك غزة" loading="lazy">
           <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>5.0</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9l4-3 4 3v12M12 21V5l4-2 4 2v16M4 21h16"/></svg>
-          <span class="photo-caption">صورة توضيحية</span>
         </div>
         <div class="hotel-body">
           <h3>فندق ارائك غزة</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - شارع غزة</div>
           <div class="hotel-price-row">
             <span class="price-cta">تواصل لمعرفة السعر</span>
-            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+            <a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
       </div>
@@ -613,23 +615,22 @@
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
             <span class="price-cta">تواصل لمعرفة السعر</span>
-            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+            <a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
       </div>
 
       <div class="hotel-card">
-        <div class="hotel-photo">
+        <div class="hotel-photo hotel-photo-real">
+          <img src="images/hotels/multaqa.jpg" alt="فندق ملتقى الأخيار" loading="lazy" style="object-position:top;">
           <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>3.0</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V10l8-6 8 6v11M4 21h16M10 21v-6h4v6"/></svg>
-          <span class="photo-caption">صورة توضيحية</span>
         </div>
         <div class="hotel-body">
           <h3>فندق ملتقى الأخيار</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - كوبري المسفلة</div>
           <div class="hotel-price-row">
             <span class="price-cta">تواصل لمعرفة السعر</span>
-            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+            <a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
       </div>
@@ -644,7 +645,7 @@
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
             <span class="price-cta">تواصل لمعرفة السعر</span>
-            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+            <a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
       </div>
@@ -656,7 +657,7 @@
         <div class="hotel-body" style="flex:1;display:flex;flex-direction:column;">
           <h3 style="min-height:auto;">ما لقيت الفندق المناسب؟</h3>
           <p style="color:var(--ink-700);font-size:.85rem;margin-top:6px;">أرسل ميزانيتك وعدد الأفراد، ونرشّح لك أقرب فندق متاح.</p>
-          <a class="btn btn-whatsapp btn-block" style="margin-top:16px;" href="https://wa.me/966568037336" target="_blank" rel="noopener">تواصل معنا</a>
+          <a class="btn btn-whatsapp btn-block" style="margin-top:16px;" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">تواصل معنا</a>
         </div>
       </div>
 
@@ -687,7 +688,7 @@
           </div>
           <div class="route-time">باص سياحي مكيف · مناسب للعائلات والمجموعات</div>
           <div class="route-price">السعر حسب التوفر — تواصل معنا</div>
-          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">حجز مقعد</a>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">حجز مقعد</a>
         </div>
         <div class="route-card">
           <div class="route-photo route-photo-real">
@@ -701,7 +702,7 @@
           </div>
           <div class="route-time">مقاعد فاخرة واسعة · منفذ USB لكل مقعد · إمالة مريحة</div>
           <div class="route-price">السعر يعتمد على مدة الرحلة — تواصل معنا</div>
-          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">حجز مقعد</a>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">حجز مقعد</a>
         </div>
       </div>
 
@@ -842,7 +843,7 @@
         <h4>تواصل معنا</h4>
         <ul>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg><a href="tel:+966568037336" class="tabular" dir="ltr">+966 56 803 7336</a></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg><a href="https://wa.me/966568037336" target="_blank" rel="noopener">واتساب: 0568037336</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg><a href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener">واتساب: 0568037336</a></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>
             <a href="https://www.google.com/maps/place/%D8%B5%D9%81%D8%A7+%D9%85%D9%83%D8%A9+%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85+%D8%A7%D9%84%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D8%8C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%AD%D9%84%D9%8A%D9%85%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D8%AF%D9%8A%D8%A9%D8%8C+%D9%85%D9%86%D9%81%D9%88%D8%AD%D8%A9+%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+12656%D8%8C+%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9" target="_blank" rel="noopener">شارع حليمة السعدية، منفوحة الجديدة، الرياض 12656</a>
           </li>
@@ -856,7 +857,7 @@
   </div>
 </footer>
 
-<a class="fab fab-wa" href="https://wa.me/966568037336" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+<a class="fab fab-wa" href="https://wa.me/966568037336?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D8%B1%D8%AD%D9%84%D8%AA%D9%83%D9%85%20%D8%A5%D9%84%D9%89%20%D9%85%D9%83%D8%A9%20%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9%20%D8%A3%D9%88%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9." target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4L9.6 8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2 1 2.4c.1.2 1.6 2.5 4 3.5.5.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
 </a>
 <a class="fab fab-call" href="tel:+966568037336" aria-label="اتصل بنا">
