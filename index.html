@@ -22,6 +22,7 @@
     --gold:#D4AF37;
     --gold-dark:#B8962D;
     --gold-soft:rgba(212,175,55,.16);
+    --gold-grad:linear-gradient(180deg, #F3D77B 0%, #D4AF37 55%, #A9791F 100%);
     --whatsapp:#25D366;
     --tag-blue:#3367D6;
     --tag-purple:#7B1FA2;
@@ -75,8 +76,8 @@
     padding:13px 24px;border-radius:12px;font-weight:700;font-size:.95rem;
     border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
   }
-  .btn-gold{background:var(--gold);color:var(--green-900);}
-  .btn-gold:hover{background:var(--gold-dark);}
+  .btn-gold{background:var(--gold-grad);color:var(--green-900);}
+  .btn-gold:hover{filter:brightness(1.06);}
   .btn-whatsapp{background:var(--whatsapp);color:#fff;}
   .btn-whatsapp:hover{filter:brightness(.94);}
   .btn-outline{border-color:rgba(255,255,255,.5);color:#fff;}
@@ -128,7 +129,8 @@
   .hero-inner{position:relative;z-index:2;padding:64px 0 0;text-align:center;}
   .badge-pill{
     display:inline-flex;align-items:center;gap:8px;
-    background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.5);
+    background:rgba(212,175,55,.18);border:1.5px solid var(--gold);
+    box-shadow:0 0 0 3px rgba(212,175,55,.18);
     padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold);
     margin-bottom:26px;
   }
@@ -373,7 +375,7 @@
   <div class="wrap nav">
     <div class="brand">
       <span class="brand-badge">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.6" y="8" width="2.1" height="11" rx=".3"/><circle cx="3.65" cy="6.3" r="1.35"/><rect x="19.3" y="8" width="2.1" height="11" rx=".3"/><circle cx="20.35" cy="6.3" r="1.35"/><rect x="7.5" y="8" width="9" height="11" rx=".4"/><rect x="7.5" y="12.6" width="9" height="1.7" fill="var(--green-900)"/></svg>
       </span>
       <div class="brand-text">
         <div class="name">صفا مكة لتنظيم الرحلات</div>
@@ -402,7 +404,7 @@
   <div class="veil"></div>
   <div class="wrap hero-inner">
     <span class="badge-pill">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.6" y="8" width="2.1" height="11" rx=".3"/><circle cx="3.65" cy="6.3" r="1.35"/><rect x="19.3" y="8" width="2.1" height="11" rx=".3"/><circle cx="20.35" cy="6.3" r="1.35"/><rect x="7.5" y="8" width="9" height="11" rx=".4"/><rect x="7.5" y="12.6" width="9" height="1.7" fill="var(--green-900)"/></svg>
       صفا مكة لتنظيم الرحلات
     </span>
     <h1>رحلتك إلى<span class="l2">بيت الله الحرام</span></h1>
@@ -823,7 +825,7 @@
     <div class="foot-grid">
       <div>
         <div class="foot-brand">
-          <span class="brand-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg></span>
+          <span class="brand-badge"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2.6" y="8" width="2.1" height="11" rx=".3"/><circle cx="3.65" cy="6.3" r="1.35"/><rect x="19.3" y="8" width="2.1" height="11" rx=".3"/><circle cx="20.35" cy="6.3" r="1.35"/><rect x="7.5" y="8" width="9" height="11" rx=".4"/><rect x="7.5" y="12.6" width="9" height="1.7" fill="var(--green-900)"/></svg></span>
           <div>
             <div class="name" style="font-weight:800;">صفا مكة لتنظيم الرحلات</div>
             <p>رحلات عمرة من الرياض بأفضل الأسعار وأرقى الخدمات، مع مرشد ديني ومتابعة كاملة من أول رسالة إلى العودة.</p>
