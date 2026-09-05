@@ -259,11 +259,8 @@
   .hotel-body h3{font-size:1rem;line-height:1.5;min-height:2.9em;}
   .hotel-loc{font-size:.8rem;color:var(--ink-700);margin-top:6px;display:flex;align-items:center;gap:5px;}
   .hotel-loc svg{width:13px;height:13px;color:var(--gold-dark);flex:none;}
-  .hotel-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);}
-  .hotel-price-row .price{display:flex;align-items:baseline;gap:7px;}
-  .hotel-price-row .now{font-weight:800;color:var(--green-700);font-size:1.15rem;}
-  .hotel-price-row .was{font-size:.8rem;color:var(--ink-500);text-decoration:line-through;}
-  .hotel-price-row .per{font-size:.72rem;color:var(--ink-500);}
+  .hotel-price-row{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);}
+  .hotel-price-row .price-cta{font-size:.85rem;font-weight:700;color:var(--ink-700);}
   .hotel-price-row a{font-size:.82rem;font-weight:800;color:var(--gold-dark);}
 
   /* ---------------- transport ---------------- */
@@ -531,11 +528,11 @@
           <div class="trip-route">الرياض ↔ مكة المكرمة</div>
           <ul class="trip-feats">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>باص سياحي مكيف 4 صفوف</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فنادق تبدأ من 120 ر.س لليلة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فنادق اقتصادية مختارة</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>مرشد للرحلة</li>
           </ul>
           <div class="trip-foot">
-            <div class="trip-price">سعر النقل حسب التوفر<span>السعر الكلي حسب الليالي والمشاركة</span></div>
+            <div class="trip-price">تواصل معنا لمعرفة السعر</div>
             <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز</a>
           </div>
         </div>
@@ -551,11 +548,11 @@
           <div class="trip-route">الرياض ↔ مكة المكرمة</div>
           <ul class="trip-feats">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>باص VIP 3 صفوف مقاعد فاخرة</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فنادق تبدأ من 200 ر.س لليلة قريبة من الحرم</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فنادق 4-5 نجوم قريبة من الحرم</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>متابعة فردية طوال الرحلة</li>
           </ul>
           <div class="trip-foot">
-            <div class="trip-price tabular">300 ر.س<span>للمقعد ذهاب وعودة (رحلة 4 أيام)</span></div>
+            <div class="trip-price">تواصل معنا لمعرفة السعر</div>
             <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز</a>
           </div>
         </div>
@@ -570,7 +567,7 @@
     <div class="head">
       <span class="kicker">الإقامة</span>
       <h2>إقامة قريبة من الحرم المكي</h2>
-      <p>نتعامل مباشرة مع فنادق شارع إبراهيم الخليل وما حولها، وهذه أسعار الليلة الواحدة حاليًا.</p>
+      <p>نتعامل مباشرة مع فنادق شارع إبراهيم الخليل وما حولها، ونرشّح لك الأنسب حسب ميزانيتك.</p>
     </div>
     <div class="hotels">
 
@@ -584,7 +581,7 @@
           <h3>فندق مكارم ضيافة البيت الحرام</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
-            <div class="price"><span class="now tabular">120</span><span class="was tabular">130</span><span class="per">ر.س/ليلة</span></div>
+            <span class="price-cta">تواصل لمعرفة السعر</span>
             <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
@@ -600,7 +597,7 @@
           <h3>فندق ارائك غزة</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - شارع غزة</div>
           <div class="hotel-price-row">
-            <div class="price"><span class="now tabular">450</span><span class="was tabular">500</span><span class="per">ر.س/ليلة</span></div>
+            <span class="price-cta">تواصل لمعرفة السعر</span>
             <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
@@ -615,7 +612,7 @@
           <h3>فندق ميلينيوم M</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
-            <div class="price"><span class="now tabular">200</span><span class="was tabular">210</span><span class="per">ر.س/ليلة</span></div>
+            <span class="price-cta">تواصل لمعرفة السعر</span>
             <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
@@ -631,7 +628,7 @@
           <h3>فندق ملتقى الأخيار</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - كوبري المسفلة</div>
           <div class="hotel-price-row">
-            <div class="price"><span class="now tabular">140</span><span class="was tabular">150</span><span class="per">ر.س/ليلة</span></div>
+            <span class="price-cta">تواصل لمعرفة السعر</span>
             <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
@@ -646,7 +643,7 @@
           <h3>فندق قصر رزق</h3>
           <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
           <div class="hotel-price-row">
-            <div class="price"><span class="now tabular">120</span><span class="was tabular">130</span><span class="per">ر.س/ليلة</span></div>
+            <span class="price-cta">تواصل لمعرفة السعر</span>
             <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
           </div>
         </div>
@@ -703,7 +700,7 @@
             <div class="route-point"><b>مكة المكرمة</b><span>حسب الموعد</span></div>
           </div>
           <div class="route-time">مقاعد فاخرة واسعة · منفذ USB لكل مقعد · إمالة مريحة</div>
-          <div class="route-price tabular">150 ر.س (رحلة 3 أيام) · 300 ر.س (رحلة 4 أيام)</div>
+          <div class="route-price">السعر يعتمد على مدة الرحلة — تواصل معنا</div>
           <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">حجز مقعد</a>
         </div>
       </div>
@@ -711,7 +708,7 @@
       <div class="schedule-poster">
         <div class="schedule-poster-head">
           <span class="rtag">جدول رحلة VIP — نموذج 3 أيام</span>
-          <span class="schedule-price tabular">150 ر.س للمقعد</span>
+          <span class="schedule-price">تواصل معنا لمعرفة السعر</span>
         </div>
         <div class="schedule-days">
           <div class="schedule-day">
@@ -730,7 +727,7 @@
             <span>الانطلاق بعد صلاة الفجر من مكة، والوصول إلى الرياض خلال اليوم.</span>
           </div>
         </div>
-        <p class="schedule-note">نفس الجدول يمتد ليوم رابع (عودة السبت بدل الجمعة) مقابل 300 ر.س للمقعد — أخبرنا بالمدة التي تناسبك عند الحجز.</p>
+        <p class="schedule-note">نفس الجدول يمتد ليوم رابع (عودة السبت بدل الجمعة) — أخبرنا بالمدة التي تناسبك عند الحجز وسنؤكد لك التفاصيل والسعر.</p>
       </div>
 
       <div class="boarding-note">
@@ -854,7 +851,7 @@
     </div>
     <div class="foot-bottom">
       <span>© 2026 صفا مكة لتنظيم الرحلات. جميع الحقوق محفوظة.</span>
-      <span>الأسعار تقديرية وتخضع لتوفر الحجز عند التواصل</span>
+      <span>التفاصيل والأسعار تُؤكد عبر واتساب حسب توفر الحجز</span>
     </div>
   </div>
 </footer>
