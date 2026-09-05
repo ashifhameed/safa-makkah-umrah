@@ -149,8 +149,13 @@
   }
   .trust-row span{
     display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:#D7DED0;
+    white-space:nowrap;
   }
-  .trust-row svg{width:16px;height:16px;color:var(--gold);}
+  .trust-row svg{width:16px;height:16px;color:var(--gold);flex:none;}
+  @media (max-width:520px){
+    .trust-row{flex-direction:column;align-items:center;gap:12px;}
+    .trust-row span{white-space:normal;text-align:center;}
+  }
 
   /* ---------------- trip planner ---------------- */
   .planner-wrap{position:relative;z-index:3;margin-top:28px;padding-bottom:56px;}
@@ -267,7 +272,7 @@
   .hotel-price-row a{font-size:.82rem;font-weight:800;color:var(--gold-dark);}
 
   /* ---------------- transport ---------------- */
-  .transport{background:var(--green-900);border-radius:28px;margin:0 24px;padding:56px 36px;color:#fff;}
+  .transport{background:var(--green-900);border-radius:28px;margin:0 24px;padding:56px 36px;color:#fff;overflow:hidden;}
   @media (max-width:640px){ .transport{margin:0;padding:32px 14px;border-radius:20px;} }
   @media (max-width:640px){ .wrap{padding:0 14px;} }
   .transport .head{text-align:right;margin:0 0 36px;max-width:none;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
@@ -327,6 +332,8 @@
   }
   .boarding-note svg{width:18px;height:18px;color:var(--gold);flex:none;}
   .boarding-note span{flex:1;min-width:240px;color:#CBD3C2;}
+  .boarding-note a.btn{white-space:normal;text-align:center;max-width:100%;}
+  @media (max-width:520px){ .boarding-note a.btn{flex:1 1 100%;} }
 
   /* ---------------- FAQ ---------------- */
   .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto;}
