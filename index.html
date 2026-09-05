@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صفا مكة لتنظيم الرحلات</title>
+<meta name="description" content="رحلات عمرة من الرياض إلى مكة المكرمة — تأشيرة، طيران، فندق قريب من الحرم، ومواصلات في باقة واحدة. تواصل معنا على واتساب 0568037336.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+  :root{
+    --bg:#FAF8F3;
+    --surface:#FFFFFF;
+    --line:#EAE3D3;
+    --ink-900:#1C2620;
+    --ink-700:#5B6660;
+    --ink-500:#8A9189;
+    --green-900:#0D2818;
+    --green-800:#163B22;
+    --green-700:#1F4A26;
+    --green-600:#2D5016;
+    --gold:#D4AF37;
+    --gold-dark:#B8962D;
+    --gold-soft:rgba(212,175,55,.16);
+    --whatsapp:#25D366;
+    --tag-blue:#3367D6;
+    --tag-purple:#7B1FA2;
+    --tag-green:#388E3C;
+    --shadow:0 20px 44px -24px rgba(13,40,24,.35);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0E140F;
+      --surface:#15201A;
+      --line:#243329;
+      --ink-900:#EDEAE0;
+      --ink-700:#AEB6AC;
+      --ink-500:#7D877E;
+      --green-900:#081911;
+      --green-800:#0F241A;
+      --shadow:0 20px 44px -20px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0E140F;
+    --surface:#15201A;
+    --line:#243329;
+    --ink-900:#EDEAE0;
+    --ink-700:#AEB6AC;
+    --ink-500:#7D877E;
+    --green-900:#081911;
+    --green-800:#0F241A;
+    --shadow:0 20px 44px -20px rgba(0,0,0,.6);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink-900);
+    font-family:'Tajawal',-apple-system,'Segoe UI',sans-serif;
+    direction:rtl;line-height:1.7;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Tajawal',sans-serif;font-weight:800;text-wrap:balance;margin:0;color:var(--ink-900);}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  img,svg{display:block;}
+  .tabular{font-variant-numeric:tabular-nums;}
+  ::selection{background:var(--gold);color:var(--green-900);}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:13px 24px;border-radius:12px;font-weight:700;font-size:.95rem;
+    border:1.5px solid transparent;cursor:pointer;white-space:nowrap;
+  }
+  .btn-gold{background:var(--gold);color:var(--green-900);}
+  .btn-gold:hover{background:var(--gold-dark);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;}
+  .btn-whatsapp:hover{filter:brightness(.94);}
+  .btn-outline{border-color:rgba(255,255,255,.5);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.1);}
+  .btn-line{border-color:var(--line);color:var(--ink-900);}
+  .btn-line:hover{background:var(--surface);}
+  .btn-sm{padding:9px 16px;font-size:.85rem;border-radius:10px;}
+  .btn-block{width:100%;justify-content:center;}
+
+  /* ---------------- header ---------------- */
+  header{
+    position:fixed;inset-inline:0;top:0;z-index:50;
+    background:color-mix(in srgb, var(--surface) 90%, transparent);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand-badge{
+    width:42px;height:42px;border-radius:50%;flex:none;
+    background:var(--green-900);display:flex;align-items:center;justify-content:center;
+  }
+  .brand-badge svg{width:22px;height:22px;color:var(--gold);}
+  .brand-text .name{font-weight:800;font-size:1.02rem;}
+  .brand-text .sub{font-size:.72rem;color:var(--ink-700);}
+  nav.links{display:flex;gap:6px;}
+  nav.links a{
+    display:flex;align-items:center;gap:6px;font-size:.88rem;font-weight:500;
+    padding:9px 14px;border-radius:999px;color:var(--ink-700);
+  }
+  nav.links a:hover{background:var(--gold-soft);color:var(--ink-900);}
+  nav.links svg{width:16px;height:16px;}
+  .header-cta{display:flex;align-items:center;gap:10px;}
+  @media (max-width:900px){ nav.links{display:none;} }
+
+  body{padding-top:74px;}
+
+  /* ---------------- hero ---------------- */
+  .hero{
+    position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(135deg, var(--green-600) 0%, var(--green-900) 78%);
+  }
+  .hero .veil{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.4));}
+  .skyline{position:absolute;bottom:0;right:0;left:0;height:46%;opacity:.35;color:#000;}
+  .stars-pattern{
+    position:absolute;inset:0;opacity:.12;
+    background-image:radial-gradient(rgba(212,175,55,.9) 1px, transparent 1.4px);
+    background-size:28px 28px;
+  }
+  .hero-inner{position:relative;z-index:2;padding:64px 0 0;text-align:center;}
+  .badge-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(212,175,55,.18);border:1px solid rgba(212,175,55,.5);
+    padding:8px 18px;border-radius:999px;font-size:.85rem;font-weight:700;color:var(--gold);
+    margin-bottom:26px;
+  }
+  .badge-pill svg{width:16px;height:16px;}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.8rem);line-height:1.3;}
+  .hero h1 .l2{color:var(--gold);display:block;}
+  .hero p.lead{
+    margin:22px auto 0;color:#E7E9E0;font-size:1.08rem;max-width:46ch;
+  }
+  .hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:34px;}
+
+  .trust-row{
+    position:relative;z-index:2;display:flex;justify-content:center;flex-wrap:wrap;
+    gap:10px 28px;margin-top:34px;padding-bottom:8px;
+  }
+  .trust-row span{
+    display:flex;align-items:center;gap:8px;font-size:.85rem;font-weight:600;color:#D7DED0;
+  }
+  .trust-row svg{width:16px;height:16px;color:var(--gold);}
+
+  /* ---------------- trip planner ---------------- */
+  .planner-wrap{position:relative;z-index:3;margin-top:28px;padding-bottom:56px;}
+  .planner-card{
+    background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);
+    border-radius:22px;padding:22px 26px 26px;
+  }
+  .planner-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+  .planner-tab{
+    flex:none;padding:9px 18px;border-radius:999px;font-size:.85rem;font-weight:700;
+    border:1.5px solid var(--line);color:var(--ink-700);cursor:pointer;background:transparent;
+    font-family:'Tajawal',sans-serif;
+  }
+  .planner-tab.active{background:var(--green-900);border-color:var(--green-900);color:#fff;}
+  .planner-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto 1.2fr;gap:14px;align-items:end;}
+  @media (max-width:980px){ .planner-grid{grid-template-columns:1fr 1fr;} }
+  .p-field{display:flex;flex-direction:column;gap:6px;text-align:right;min-width:0;}
+  .p-field label{font-size:.72rem;font-weight:800;color:var(--ink-500);}
+  .p-field select,.p-field input[type="date"]{
+    font-family:'Tajawal',sans-serif;font-size:.9rem;color:var(--ink-900);
+    border:1.5px solid var(--line);border-radius:10px;padding:10px 10px;background:var(--surface);
+    width:100%;
+  }
+  .p-field select:disabled{color:var(--ink-700);background:var(--bg);}
+  .stepper{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:10px;overflow:hidden;height:41px;}
+  .stepper button{
+    width:34px;height:100%;border:none;background:var(--gold-soft);color:var(--green-700);
+    font-size:1.05rem;cursor:pointer;font-family:'Tajawal',sans-serif;
+  }
+  .stepper button:hover{background:var(--gold);color:#fff;}
+  .stepper .count{flex:1;text-align:center;font-weight:800;font-size:.92rem;min-width:30px;}
+  .planner-note{display:flex;align-items:center;gap:8px;margin-top:18px;font-size:.84rem;color:var(--ink-700);}
+  .planner-note input{width:16px;height:16px;accent-color:var(--gold-dark);}
+
+  /* ---------------- section shell ---------------- */
+  section{padding:120px 0 80px;}
+  section.tight{padding-top:80px;}
+  .head{max-width:620px;margin:0 auto 48px;text-align:center;}
+  .kicker{display:inline-block;font-size:.8rem;font-weight:800;color:var(--gold-dark);letter-spacing:.02em;margin-bottom:10px;}
+  .head h2{font-size:clamp(1.7rem,3.4vw,2.2rem);}
+  .head p{margin-top:14px;color:var(--ink-700);font-size:1rem;}
+
+  /* ---------------- trip cards ---------------- */
+  .trips{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:920px){ .trips{grid-template-columns:1fr;max-width:420px;margin-inline:auto;} }
+  .trip-card{
+    background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;
+  }
+  .trip-photo{
+    height:150px;position:relative;
+    background:linear-gradient(135deg, var(--green-700), var(--green-900));
+    display:flex;align-items:center;justify-content:center;
+  }
+  .trip-photo svg{width:52px;height:52px;color:rgba(212,175,55,.7);}
+  .trip-tag{
+    position:absolute;bottom:-14px;right:18px;color:#fff;font-size:.8rem;font-weight:800;
+    padding:7px 16px;border-radius:999px;box-shadow:0 8px 16px -6px rgba(0,0,0,.4);
+  }
+  .trip-body{padding:28px 22px 24px;display:flex;flex-direction:column;gap:16px;flex:1;}
+  .trip-body h3{font-size:1.12rem;}
+  .trip-route{font-size:.85rem;color:var(--ink-700);font-weight:500;}
+  .trip-feats{display:flex;flex-direction:column;gap:9px;}
+  .trip-feats li{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--ink-700);}
+  .trip-feats svg{width:16px;height:16px;color:var(--gold-dark);flex:none;}
+  .trip-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .trip-price{font-weight:800;color:var(--green-700);font-size:1.1rem;}
+  .trip-price span{font-size:.72rem;color:var(--ink-500);font-weight:500;display:block;}
+
+  /* ---------------- hotels ---------------- */
+  .hotels{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:920px){ .hotels{grid-template-columns:1fr 1fr;} }
+  @media (max-width:640px){ .hotels{grid-template-columns:1fr;max-width:420px;margin-inline:auto;} }
+  .hotel-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);}
+  .hotel-photo{
+    height:130px;position:relative;
+    background:linear-gradient(150deg, var(--green-800), var(--green-600));
+  }
+  .hotel-photo svg{position:absolute;inset:0;margin:auto;width:40px;height:40px;color:rgba(212,175,55,.75);}
+  .hotel-rating{
+    position:absolute;top:12px;left:12px;background:rgba(0,0,0,.6);color:#fff;
+    font-size:.78rem;font-weight:800;padding:5px 10px;border-radius:999px;display:flex;align-items:center;gap:5px;
+  }
+  .hotel-rating svg{position:static;width:13px;height:13px;color:var(--gold);}
+  .hotel-body{padding:20px;}
+  .hotel-body h3{font-size:1rem;line-height:1.5;min-height:2.9em;}
+  .hotel-loc{font-size:.8rem;color:var(--ink-700);margin-top:6px;display:flex;align-items:center;gap:5px;}
+  .hotel-loc svg{width:13px;height:13px;color:var(--gold-dark);flex:none;}
+  .hotel-price-row{display:flex;align-items:baseline;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);}
+  .hotel-price-row .price{display:flex;align-items:baseline;gap:7px;}
+  .hotel-price-row .now{font-weight:800;color:var(--green-700);font-size:1.15rem;}
+  .hotel-price-row .was{font-size:.8rem;color:var(--ink-500);text-decoration:line-through;}
+  .hotel-price-row .per{font-size:.72rem;color:var(--ink-500);}
+  .hotel-price-row a{font-size:.82rem;font-weight:800;color:var(--gold-dark);}
+
+  /* ---------------- transport ---------------- */
+  .transport{background:var(--green-900);border-radius:28px;margin:0 24px;padding:56px 36px;color:#fff;}
+  .transport .head{text-align:right;margin:0 0 36px;max-width:none;display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+  .transport .head p{color:#C9D2C2;}
+  .route-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:760px){ .route-cards{grid-template-columns:1fr;} }
+  .route-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.25);
+    border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:18px;
+  }
+  .route-card .rtag{font-size:.8rem;font-weight:800;color:var(--gold);}
+  .route-line{display:flex;align-items:center;gap:12px;}
+  .route-point{text-align:center;}
+  .route-point b{display:block;font-size:1rem;}
+  .route-point span{font-size:.74rem;color:#C9D2C2;}
+  .route-arrow{flex:1;height:1px;background:repeating-linear-gradient(90deg, var(--gold) 0 6px, transparent 6px 11px);position:relative;}
+  .route-arrow::after{content:"";position:absolute;inset-inline-start:-2px;top:-4px;width:9px;height:9px;border-inline-start:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(135deg);}
+  .route-time{font-size:.82rem;color:#C9D2C2;}
+  .boarding-note{
+    margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:.86rem;color:#D7DECF;
+  }
+  .boarding-note svg{width:18px;height:18px;color:var(--gold);flex:none;}
+  .boarding-note span{flex:1;min-width:240px;color:#CBD3C2;}
+
+  /* ---------------- FAQ ---------------- */
+  .faq-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto;}
+  .faq-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:2px 22px;}
+  .faq-item summary{
+    cursor:pointer;padding:18px 0;font-weight:700;font-size:.98rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{content:"+";font-size:1.4rem;color:var(--gold-dark);font-weight:400;flex:none;}
+  .faq-item[open] summary::after{content:"−";}
+  .faq-item p{margin:0 0 20px;color:var(--ink-700);font-size:.92rem;line-height:1.85;}
+  .faq-item p a{color:var(--gold-dark);font-weight:700;}
+
+  /* ---------------- steps ---------------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  @media (max-width:820px){ .steps{grid-template-columns:1fr 1fr;} }
+  .step{text-align:center;}
+  .step .num{
+    width:54px;height:54px;border-radius:50%;margin:0 auto 16px;
+    background:var(--gold-soft);border:1.5px solid var(--gold);color:var(--gold-dark);
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.25rem;
+  }
+  .step h3{font-size:1rem;margin-bottom:8px;}
+  .step p{font-size:.88rem;color:var(--ink-700);}
+
+  /* ---------------- footer ---------------- */
+  footer{background:var(--green-900);color:#EDE9DA;padding:64px 0 0;}
+  .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid rgba(255,255,255,.12);}
+  @media (max-width:760px){ .foot-grid{grid-template-columns:1fr;gap:32px;} }
+  .foot-brand{display:flex;align-items:flex-start;gap:12px;}
+  .foot-brand p{margin-top:12px;color:#B7C0AE;font-size:.9rem;max-width:38ch;}
+  footer h4{font-size:.95rem;font-weight:800;margin-bottom:16px;color:var(--gold);}
+  footer ul{display:flex;flex-direction:column;gap:10px;font-size:.9rem;color:#CBD3C2;}
+  footer ul a:hover{color:var(--gold);}
+  footer ul li{display:flex;align-items:center;gap:8px;}
+  footer ul svg{width:15px;height:15px;color:var(--gold);flex:none;}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;padding:22px 0;font-size:.82rem;color:#93A088;}
+
+  .fab{
+    position:fixed;bottom:24px;z-index:60;width:56px;height:56px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px -8px rgba(0,0,0,.5);
+  }
+  .fab-wa{background:var(--whatsapp);right:24px;}
+  .fab-call{background:var(--green-900);left:24px;border:2px solid var(--gold);}
+  .fab svg{width:26px;height:26px;color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="brand-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>
+      </span>
+      <div class="brand-text">
+        <div class="name">صفا مكة لتنظيم الرحلات</div>
+        <div class="sub">رحلات عمرة بالرياض</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#trips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10.5 20.5 8 21l1-3.5-5-2 2-2 12-6-5 12-2-2-3.5 3Z"/></svg>الباقات</a>
+      <a href="#hotels"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V9l9-6 9 6v12M9 21v-5h6v5"/></svg>الفنادق</a>
+      <a href="#transport"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="10" width="18" height="7" rx="2"/><path d="M5 10 7 5h10l2 5"/></svg>المواصلات</a>
+      <a href="#faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2 1.8-2 3.5"/><path d="M12 17h.01"/></svg>الأسئلة الشائعة</a>
+      <a href="#contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.3"/></svg>تواصل معنا</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-line btn-sm" href="tel:+966568037336">اتصل بنا</a>
+      <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">واتساب</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="stars-pattern"></div>
+  <svg class="skyline" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true">
+    <rect width="1200" height="200" fill="currentColor"/>
+    <path fill="var(--green-900)" d="M0 200V90l40-10v-20a10 10 0 0 1 20 0v20l40 10v10l60-14a14 14 0 0 1 28 0l60 14v-30a12 12 0 0 1 24 0v30l50-10V70a8 8 0 0 1 16 0v30l70 16V96a30 30 0 0 1 60 0v20l70-16v-40a10 10 0 0 1 20 0v40l60 14a14 14 0 0 1 28 0l60-14v-20a10 10 0 0 1 20 0v20l50 12v-16a8 8 0 0 1 16 0v16l60 14V70a10 10 0 0 1 20 0v34l90 20V200Z"/>
+  </svg>
+  <div class="veil"></div>
+  <div class="wrap hero-inner">
+    <span class="badge-pill">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>
+      صفا مكة لتنظيم الرحلات
+    </span>
+    <h1>رحلتك إلى<span class="l2">بيت الله الحرام</span></h1>
+    <p class="lead">رحلات عمرة من الرياض إلى مكة المكرمة، تأشيرة وطيران وفندق ومواصلات في باقة واحدة بأفضل الأسعار.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز الآن ←</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/966568037336" target="_blank" rel="noopener">واتساب</a>
+      <a class="btn btn-outline" href="tel:+966568037336">اتصل بنا</a>
+    </div>
+  </div>
+  <div class="wrap trust-row">
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>رحلات مجدولة أسبوعيًا</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V9l9-6 9 6v12M9 21v-5h6v5"/></svg>فنادق قريبة من الحرم</span>
+    <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>مرشد ديني مرافق</span>
+  </div>
+
+  <div class="wrap planner-wrap">
+    <div class="planner-card" id="planner">
+      <div class="planner-tabs">
+        <button type="button" class="planner-tab active" data-type="نقل فقط (بدون سكن)">نقل فقط (بدون سكن)</button>
+        <button type="button" class="planner-tab" data-type="باقة كاملة (تأشيرة + فندق + نقل)">باقة كاملة (تأشيرة + فندق)</button>
+      </div>
+      <div class="planner-grid">
+        <div class="p-field">
+          <label for="plannerFrom">من</label>
+          <select id="plannerFrom" disabled>
+            <option>الرياض</option>
+          </select>
+        </div>
+        <div class="p-field">
+          <label for="plannerTo">إلى</label>
+          <select id="plannerTo">
+            <option value="مكة المكرمة">مكة المكرمة</option>
+            <option value="المدينة المنورة">المدينة المنورة</option>
+            <option value="مكة والمدينة">مكة والمدينة</option>
+          </select>
+        </div>
+        <div class="p-field">
+          <label for="plannerDepart">تاريخ الذهاب</label>
+          <input type="date" id="plannerDepart">
+        </div>
+        <div class="p-field">
+          <label for="plannerReturn">تاريخ العودة</label>
+          <input type="date" id="plannerReturn">
+        </div>
+        <div class="p-field">
+          <label>عدد المسافرين</label>
+          <div class="stepper">
+            <button type="button" id="paxPlus" aria-label="زيادة">+</button>
+            <span class="count tabular" id="paxCount">2</span>
+            <button type="button" id="paxMinus" aria-label="إنقاص">−</button>
+          </div>
+        </div>
+        <div class="p-field">
+          <label>&nbsp;</label>
+          <button type="button" class="btn btn-whatsapp btn-block" id="plannerSubmit">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4L9.6 8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2 1 2.4c.1.2 1.6 2.5 4 3.5.5.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+            احجز عبر واتساب
+          </button>
+        </div>
+      </div>
+      <label class="planner-note">
+        <input type="checkbox" id="plannerElderly">
+        يوجد كبار سن أو أطفال ضمن المجموعة
+      </label>
+    </div>
+  </div>
+</section>
+
+<section id="trips" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">باقاتنا</span>
+      <h2>رحلات عمرة من الرياض</h2>
+      <p>اختر الباقة التي تناسبك، وكل التفاصيل من التأشيرة إلى المواصلات جاهزة قبل سفرك.</p>
+    </div>
+    <div class="trips">
+
+      <div class="trip-card">
+        <div class="trip-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5M9 12h.01M9 9h.01M15 12h.01M15 9h.01"/></svg>
+          <span class="trip-tag" style="background:var(--tag-green);">اقتصادية</span>
+        </div>
+        <div class="trip-body">
+          <h3>مكة فقط — 3 أيام</h3>
+          <div class="trip-route">الرياض ↔ مكة المكرمة</div>
+          <ul class="trip-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>مرشد للرحلة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فندق اقتصادي 3 نجوم</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>نقل مكيف من وإلى المطار</li>
+          </ul>
+          <div class="trip-foot">
+            <div class="trip-price tabular">890 ر.س<span>للفرد</span></div>
+            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز عبر واتساب</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trip-card">
+        <div class="trip-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9l4-3 4 3v12M12 21V5l4-2 4 2v16M4 21h16M8 13h.01M8 17h.01M16 9h.01M16 13h.01M16 17h.01"/></svg>
+          <span class="trip-tag" style="background:var(--tag-blue);">مميزة</span>
+        </div>
+        <div class="trip-body">
+          <h3>مكة والمدينة — 5 أيام</h3>
+          <div class="trip-route">الرياض ↔ مكة والمدينة</div>
+          <ul class="trip-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>مرشد ديني طوال الرحلة</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فندق 4-5 نجوم قريب من الحرم</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>زيارة مزارات المدينة المنورة</li>
+          </ul>
+          <div class="trip-foot">
+            <div class="trip-price tabular">1450 ر.س<span>للفرد</span></div>
+            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز عبر واتساب</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="trip-card">
+        <div class="trip-photo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></svg>
+          <span class="trip-tag" style="background:var(--tag-purple);">VIP</span>
+        </div>
+        <div class="trip-body">
+          <h3>مكة فقط — VIP 3 أيام</h3>
+          <div class="trip-route">الرياض ↔ مكة المكرمة</div>
+          <ul class="trip-feats">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>فندق 5 نجوم إطلالة على الحرم</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>سيارة خاصة بدل النقل المشترك</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>متابعة فردية من فريقنا</li>
+          </ul>
+          <div class="trip-foot">
+            <div class="trip-price tabular">2600 ر.س<span>للفرد</span></div>
+            <a class="btn btn-whatsapp btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">احجز عبر واتساب</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="hotels" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">الإقامة</span>
+      <h2>إقامة قريبة من الحرم المكي</h2>
+      <p>نتعامل مباشرة مع فنادق شارع إبراهيم الخليل وما حولها، وهذه أسعار الليلة الواحدة حاليًا.</p>
+    </div>
+    <div class="hotels">
+
+      <div class="hotel-card">
+        <div class="hotel-photo">
+          <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>3.0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-5h6v5"/></svg>
+        </div>
+        <div class="hotel-body">
+          <h3>فندق مكارم ضيافة البيت الحرام</h3>
+          <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
+          <div class="hotel-price-row">
+            <div class="price"><span class="now tabular">120</span><span class="was tabular">130</span><span class="per">ر.س/ليلة</span></div>
+            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-photo">
+          <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>5.0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V9l4-3 4 3v12M12 21V5l4-2 4 2v16M4 21h16"/></svg>
+        </div>
+        <div class="hotel-body">
+          <h3>فندق ارائك غزة</h3>
+          <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - شارع غزة</div>
+          <div class="hotel-price-row">
+            <div class="price"><span class="now tabular">450</span><span class="was tabular">500</span><span class="per">ر.س/ليلة</span></div>
+            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-photo">
+          <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>5.0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V4h9v17M9 8h3M9 12h3M9 16h3M15 21v-6h3v6"/></svg>
+        </div>
+        <div class="hotel-body">
+          <h3>فندق ميلينيوم M</h3>
+          <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
+          <div class="hotel-price-row">
+            <div class="price"><span class="now tabular">200</span><span class="was tabular">210</span><span class="per">ر.س/ليلة</span></div>
+            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-photo">
+          <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>3.0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 21V10l8-6 8 6v11M4 21h16M10 21v-6h4v6"/></svg>
+        </div>
+        <div class="hotel-body">
+          <h3>فندق ملتقى الأخيار</h3>
+          <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - كوبري المسفلة</div>
+          <div class="hotel-price-row">
+            <div class="price"><span class="now tabular">140</span><span class="was tabular">150</span><span class="per">ر.س/ليلة</span></div>
+            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card">
+        <div class="hotel-photo">
+          <span class="hotel-rating"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg>4.0</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V6l4-2v17M13 21V9l6-3v15M8 10h.01M8 14h.01M8 17h.01"/></svg>
+        </div>
+        <div class="hotel-body">
+          <h3>فندق قصر رزق</h3>
+          <div class="hotel-loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>مكة المكرمة - إبراهيم الخليل</div>
+          <div class="hotel-price-row">
+            <div class="price"><span class="now tabular">120</span><span class="was tabular">130</span><span class="per">ر.س/ليلة</span></div>
+            <a href="https://wa.me/966568037336" target="_blank" rel="noopener">التفاصيل</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="hotel-card" style="display:flex;flex-direction:column;">
+        <div class="hotel-photo" style="background:linear-gradient(150deg, var(--gold-dark), var(--gold));">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--green-900)" stroke-width="1.6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10Z"/></svg>
+        </div>
+        <div class="hotel-body" style="flex:1;display:flex;flex-direction:column;">
+          <h3 style="min-height:auto;">ما لقيت الفندق المناسب؟</h3>
+          <p style="color:var(--ink-700);font-size:.85rem;margin-top:6px;">أرسل ميزانيتك وعدد الأفراد، ونرشّح لك أقرب فندق متاح.</p>
+          <a class="btn btn-whatsapp btn-block" style="margin-top:16px;" href="https://wa.me/966568037336" target="_blank" rel="noopener">راسلنا على واتساب</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="transport" class="tight">
+  <div class="wrap">
+    <div class="transport">
+      <div class="head">
+        <div>
+          <span class="kicker">المواصلات</span>
+          <h2>خدمات النقل من الرياض</h2>
+        </div>
+        <p>باصات مكيفة ومرشد مرافق من نقطة انطلاق ثابتة في الرياض إلى باب الفندق في مكة، تحت اسم أسطولنا "قافلة أضواء مكة".</p>
+      </div>
+      <div class="route-cards">
+        <div class="route-card">
+          <span class="rtag">نقل جماعي VIP — 3 صفوف مقاعد</span>
+          <div class="route-line">
+            <div class="route-point"><b>الرياض</b><span>الحضور 11:00 ص</span></div>
+            <div class="route-arrow"></div>
+            <div class="route-point"><b>مكة المكرمة</b><span>حسب الموعد</span></div>
+          </div>
+          <div class="route-time">مقاعد فاخرة واسعة · منفذ USB لكل مقعد · إمالة مريحة</div>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">حجز مقعد</a>
+        </div>
+        <div class="route-card">
+          <span class="rtag">نقل اقتصادي — 4 صفوف مقاعد</span>
+          <div class="route-line">
+            <div class="route-point"><b>مكة المكرمة</b><span>بعد الفجر</span></div>
+            <div class="route-arrow"></div>
+            <div class="route-point"><b>الرياض</b><span>غالبًا قبل الفجر</span></div>
+          </div>
+          <div class="route-time">باص سياحي مكيف · مناسب للعائلات والمجموعات</div>
+          <a class="btn btn-gold btn-sm" href="https://wa.me/966568037336" target="_blank" rel="noopener">حجز مقعد</a>
+        </div>
+      </div>
+      <div class="boarding-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="10" r="2.3"/></svg>
+        <span>نقطة الصعود في الرياض: حي المنفوحة الجديدة — ونقطة النزول في مكة: شارع إبراهيم الخليل قرب الحرم. تتوفر مواقف سيارات مجانية عند نقطة الانطلاق.</span>
+        <a class="btn btn-line btn-sm" href="https://maps.app.goo.gl/M5ZhP1sYZFD2JuSk8" target="_blank" rel="noopener">عرض نقطة الانطلاق على الخريطة</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">خطوات الحجز</span>
+      <h2>من أول رسالة إلى رجوعك سالمًا</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">١</div><h3>تواصل معنا</h3><p>راسلنا على واتساب بعدد المعتمرين والتاريخ المتوقع.</p></div>
+      <div class="step"><div class="num">٢</div><h3>اختيار الباقة</h3><p>نرسل خيارات الفنادق والأسعار حسب ميزانيتك.</p></div>
+      <div class="step"><div class="num">٣</div><h3>الحجز والتأكيد</h3><p>نصدر التأشيرة ونحجز الطيران أو الباص والفندق.</p></div>
+      <div class="step"><div class="num">٤</div><h3>السفر والمتابعة</h3><p>مرشدنا يرافقكم حتى أداء العمرة والعودة للرياض.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">الأسئلة الشائعة</span>
+      <h2>كل ما تحتاج معرفته قبل الحجز</h2>
+      <p>جمعنا لك أكثر الأسئلة التي تصلنا على واتساب قبل كل رحلة.</p>
+    </div>
+    <div class="faq-list">
+
+      <details class="faq-item" open>
+        <summary>من أين تنطلق الحافلة في الرياض ومكة؟</summary>
+        <p>الانطلاق من حي المنفوحة الجديدة في الرياض، والوصول إلى شارع إبراهيم الخليل القريب من الحرم في مكة المكرمة. يمكنك مشاهدة نقطة الصعود بالضبط على <a href="https://maps.app.goo.gl/M5ZhP1sYZFD2JuSk8" target="_blank" rel="noopener">خرائط جوجل من هنا</a>.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ما موعد الحضور والانطلاق؟</summary>
+        <p>الحضور الساعة 11 صباحًا في نقطة الانطلاق، وتتحرك الحافلة بعدها مباشرة بإذن الله. يُفضّل الحضور قبل الموعد بربع ساعة لتسجيل المقاعد.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>متى تنطلق رحلة العودة من مكة؟</summary>
+        <p>غالبًا بعد صلاة الفجر، وتصل الحافلة إلى الرياض عادة بين منتصف الليل والساعة الواحدة صباحًا حسب حركة الطريق.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل تتوفر مواقف سيارات عند نقطة الانطلاق؟</summary>
+        <p>نعم، تتوفر مواقف مجانية عند موقع الصعود، ويستخدمها كثير من ركابنا دون أي مشكلة.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ماذا أحتاج لتأكيد الحجز؟</summary>
+        <p>صورة من الهوية، ورقم جوال للتواصل معك أثناء الرحلة، مع سداد كامل قيمة الحجز قبل يوم السفر لضمان مقعدك.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>كيف يتم الدفع؟</summary>
+        <p>تحويل بنكي مباشر، ونرسل لك تفاصيل الحساب على واتساب بعد تأكيد الحجز.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>ما سياسة الإلغاء؟</summary>
+        <p>يُعتبر الحجز مؤكدًا فور السداد، حيث تُحجز المقاعد باسم الركاب قبل موعد الرحلة — تمامًا كحجوزات الطيران. لذلك لا يمكن استرجاع المبلغ بعد التأكيد، ونرجو مراعاة ذلك عند الحجز.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل يمكن تخصيص مقاعد متجاورة أو ترتيبات لكبار السن؟</summary>
+        <p>نعم، أخبرنا برغبتك عند الحجز (مثل مقاعد متجاورة للعائلة أو مقعد قريب من الباب لكبار السن) وسنراعي ذلك حسب توفر المقاعد.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل تتوفر رحلات نقل فقط بدون فندق؟</summary>
+        <p>نعم، بجانب باقاتنا الكاملة نوفر تذاكر حافلة VIP للنقل فقط لمن يفضّل حجز سكنه الخاص.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>هل يمكن أداء صلاة الفجر في الحرم قبل التوجه للعودة؟</summary>
+        <p>ننصح بأداء صلاة الفجر في الفندق لضمان عدم تأخرك عن موعد انطلاق الحافلة، ويمكنك التنسيق مع المرافق في يوم الرحلة.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 14 8.5 21 9 15.5 13 17.5 20 12 16 6.5 20 8.5 13 3 9 10 8.5Z"/></svg></span>
+          <div>
+            <div class="name" style="font-weight:800;">صفا مكة لتنظيم الرحلات</div>
+            <p>رحلات عمرة من الرياض بأفضل الأسعار وأرقى الخدمات، مع مرشد ديني ومتابعة كاملة من أول رسالة إلى العودة.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#trips">الباقات</a></li>
+          <li><a href="#hotels">الفنادق</a></li>
+          <li><a href="#transport">المواصلات</a></li>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>تواصل معنا</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg><a href="tel:+966568037336" class="tabular" dir="ltr">+966 56 803 7336</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg><a href="https://wa.me/966568037336" target="_blank" rel="noopener">واتساب: 0568037336</a></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/></svg>
+            <a href="https://www.google.com/maps/place/%D8%B5%D9%81%D8%A7+%D9%85%D9%83%D8%A9+%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85+%D8%A7%D9%84%D8%B1%D8%AD%D9%84%D8%A7%D8%AA%D8%8C+%D8%B4%D8%A7%D8%B1%D8%B9+%D8%AD%D9%84%D9%8A%D9%85%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D8%AF%D9%8A%D8%A9%D8%8C+%D9%85%D9%86%D9%81%D9%88%D8%AD%D8%A9+%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF%D8%A9%D8%8C+%D8%A7%D9%84%D8%B1%D9%8A%D8%A7%D8%B6+12656%D8%8C+%D8%A7%D9%84%D9%85%D9%85%D9%84%D9%83%D8%A9+%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9" target="_blank" rel="noopener">شارع حليمة السعدية، منفوحة الجديدة، الرياض 12656</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 صفا مكة لتنظيم الرحلات. جميع الحقوق محفوظة.</span>
+      <span>الأسعار تقديرية وتخضع لتوفر الحجز عند التواصل</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab fab-wa" href="https://wa.me/966568037336" target="_blank" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.1 8.1 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.7.8-.8.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.2 0-.3 0-.4L9.6 8c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2 1 2.4c.1.2 1.6 2.5 4 3.5.5.2 1 .4 1.3.5.6.2 1.1.1 1.5.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3Z"/></svg>
+</a>
+<a class="fab fab-call" href="tel:+966568037336" aria-label="اتصل بنا">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5a2 2 0 0 1 2-2h3l2 5-2 1a11 11 0 0 0 6 6l1-2 5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5Z"/></svg>
+</a>
+
+<script>
+(function(){
+  var WHATSAPP_NUMBER = '966568037336';
+
+  var tripType = 'نقل فقط (بدون سكن)';
+  var typeButtons = document.querySelectorAll('.planner-tab');
+  typeButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      typeButtons.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      tripType = btn.getAttribute('data-type');
+    });
+  });
+
+  var pax = 2;
+  var paxCountEl = document.getElementById('paxCount');
+  document.getElementById('paxMinus').addEventListener('click', function(){
+    if (pax > 1) { pax--; paxCountEl.textContent = pax; }
+  });
+  document.getElementById('paxPlus').addEventListener('click', function(){
+    if (pax < 45) { pax++; paxCountEl.textContent = pax; }
+  });
+
+  function formatDate(value){
+    if (!value) return 'غير محدد';
+    var parts = value.split('-');
+    return parts[2] + '/' + parts[1] + '/' + parts[0];
+  }
+
+  document.getElementById('plannerSubmit').addEventListener('click', function(){
+    var to = document.getElementById('plannerTo').value;
+    var depart = formatDate(document.getElementById('plannerDepart').value);
+    var ret = formatDate(document.getElementById('plannerReturn').value);
+    var elderly = document.getElementById('plannerElderly').checked;
+
+    var lines = [
+      'السلام عليكم، أرغب بحجز رحلة عمرة:',
+      '- نوع الرحلة: ' + tripType,
+      '- من: الرياض',
+      '- إلى: ' + to,
+      '- تاريخ الذهاب: ' + depart,
+      '- تاريخ العودة: ' + ret,
+      '- عدد المسافرين: ' + pax
+    ];
+    if (elderly) { lines.push('- ملاحظة: يوجد كبار سن أو أطفال ضمن المجموعة'); }
+    lines.push('يرجى تأكيد التوفر والسعر، شاكرين تعاونكم.');
+
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + text, '_blank', 'noopener');
+  });
+})();
+</script>
+
+</body>
+</html>
